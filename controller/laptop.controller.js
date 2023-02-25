@@ -51,4 +51,31 @@ const televisionData = async (req,res)=>{
         res.status(401).send("Invalid api");
     }
 }
-module.exports = {watchData, laptopData, applianceData, soundbarData, televisionData}
+
+const televisionDelete = async(req, res)=>{
+    try{
+        let exists = await telivisionModel.findOneAndDelete({
+            id: req.params.id,
+        })
+        console.log(exists, req.params.id, req.body.name);
+  
+        res.status(200).send("Product deleted successfully");
+    }catch(e){
+        console.log(e)
+    }
+}
+
+// app.delete("/", async (req, res) => {
+//     try {
+//       let exists = await Electronic.findOneAndDelete({
+//         id: req.body.id,
+//         name: req.body.name,
+//       });
+//       console.log(exists, req.body.id, req.body.name);
+  
+//       res.status(200).send("Product deleted successfully");
+//     } catch (e) {
+//       res.send(e.massage);
+//     }
+//   });
+module.exports = {watchData, laptopData, applianceData, soundbarData, televisionData, televisionDelete}

@@ -1,6 +1,6 @@
 const express = require("express")
 
-const {laptopData, watchData, applianceData, soundbarData, televisionData} =require("../controller/laptop.controller")
+const {laptopData, watchData, applianceData, soundbarData, televisionData, televisionDelete} =require("../controller/laptop.controller")
 
 const {telivisionPostData, appliancePostData, soundbarPostData, watchPostData, laptopPostData} = require('../controller/post.controller')
 
@@ -44,5 +44,9 @@ const {
 
 app.post("/register", signup);
 app.post("/login", login);
+
+//delete
+
+app.delete("/telivision/:id", televisionDelete)
 
 module.exports = app
