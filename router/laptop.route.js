@@ -36,4 +36,13 @@ app.post("/soundbar", soundbarPostData)
 
 app.post("/telivision", telivisionPostData)
 
+// login signup
+const {
+  signup,
+  login
+} = require("../controller/user.controller");
+
+app.post("/register", signup);
+app.post("/login", login);
+
 module.exports = app
