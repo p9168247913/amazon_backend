@@ -55,11 +55,61 @@ const laptopPostData = async (req, res) => {
        
      await telivision.save();
       res.status(200).send(telivision);
+      console.log(television)
     } catch (e) {
       res.status(e).send("Invalid api");
     }
   };
+
+  const televisionPatch =async(req,res)=>{
+    try{
+      const product = await telivisionModel.findByIdAndUpdate(req.params, req.body,{new:true})
+      res.status(200).send(product)
+    }catch(e){
+      console.log(e)
+      res.status(500).send(e.message)
+    }
+  }
+
+  const appliancePatch =async(req,res)=>{
+    try{
+      const product = await applianceModel.findByIdAndUpdate(req.params, req.body,{new:true})
+      res.status(200).send(product)
+    }catch(e){
+      console.log(e)
+      res.status(500).send(e.message)
+    }
+  }
+  const laptopPatch =async(req,res)=>{
+    try{
+      const product = await laptopModel.findByIdAndUpdate(req.params, req.body,{new:true})
+      res.status(200).send(product)
+    }catch(e){
+      console.log(e)
+      res.status(500).send(e.message)
+    }
+  }
+  const soundbarPatch =async(req,res)=>{
+    try{
+      const product = await soundbarModel.findByIdAndUpdate(req.params, req.body,{new:true})
+      res.status(200).send(product)
+    }catch(e){
+      console.log(e)
+      res.status(500).send(e.message)
+    }
+  }
+
+  const watchPatch =async(req,res)=>{
+    try{
+      const product = await watchModel.findByIdAndUpdate(req.params, req.body,{new:true})
+      res.status(200).send(product)
+    }catch(e){
+      console.log(e)
+      res.status(500).send(e.message)
+    }
+  }
+
   
-  module.exports ={telivisionPostData, appliancePostData, soundbarPostData, watchPostData, laptopPostData}
+  module.exports ={telivisionPostData, appliancePostData, soundbarPostData, watchPostData, laptopPostData, televisionPatch, laptopPatch, soundbarPatch, watchPatch, appliancePatch}
 
   

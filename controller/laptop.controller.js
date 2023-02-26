@@ -47,6 +47,7 @@ const televisionData = async (req,res)=>{
     try{
         let laptop = await telivisionModel.find({});
         res.status(200).send(laptop);
+        
     }catch(e){
         res.status(401).send("Invalid api");
     }
@@ -65,6 +66,54 @@ const televisionDelete = async(req, res)=>{
     }
 }
 
+const laptopDelete = async(req, res)=>{
+    try{
+        let exists = await laptopModel.findOneAndDelete({
+            id: req.params.id,
+        })
+        console.log(exists, req.params.id, req.body.name);
+  
+        res.status(200).send("Product deleted successfully");
+    }catch(e){
+        console.log(e)
+    }
+}
+const applianceDelete = async(req, res)=>{
+    try{
+        let exists = await applianceModel.findOneAndDelete({
+            id: req.params.id,
+        })
+        console.log(exists, req.params.id, req.body.name);
+  
+        res.status(200).send("Product deleted successfully");
+    }catch(e){
+        console.log(e)
+    }
+}
+const watchDelete = async(req, res)=>{
+    try{
+        let exists = await watchModel.findOneAndDelete({
+            id: req.params.id,
+        })
+        console.log(exists, req.params.id, req.body.name);
+  
+        res.status(200).send("Product deleted successfully");
+    }catch(e){
+        console.log(e)
+    }
+}
+const soundbarDelete = async(req, res)=>{
+    try{
+        let exists = await soundbarModel.findOneAndDelete({
+            id: req.params.id,
+        })
+        console.log(exists, req.params.id, req.body.name);
+  
+        res.status(200).send("Product deleted successfully");
+    }catch(e){
+        console.log(e)
+    }
+}
 // app.delete("/", async (req, res) => {
 //     try {
 //       let exists = await Electronic.findOneAndDelete({
@@ -78,4 +127,4 @@ const televisionDelete = async(req, res)=>{
 //       res.send(e.massage);
 //     }
 //   });
-module.exports = {watchData, laptopData, applianceData, soundbarData, televisionData, televisionDelete}
+module.exports = {watchData, laptopData, applianceData, soundbarData, televisionData, televisionDelete, laptopDelete, applianceDelete, soundbarDelete, watchDelete}

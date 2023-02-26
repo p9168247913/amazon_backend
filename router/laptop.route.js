@@ -1,8 +1,8 @@
 const express = require("express")
 
-const {laptopData, watchData, applianceData, soundbarData, televisionData, televisionDelete} =require("../controller/laptop.controller")
+const {laptopData, watchData, applianceData, soundbarData, televisionData, televisionDelete, soundbarDelete, watchDelete, applianceDelete, laptopDelete} =require("../controller/laptop.controller")
 
-const {telivisionPostData, appliancePostData, soundbarPostData, watchPostData, laptopPostData} = require('../controller/post.controller')
+const {telivisionPostData, appliancePostData, soundbarPostData, watchPostData, laptopPostData, televisionPatch, laptopPatch, appliancePatch, watchPatch, soundbarPatch} = require('../controller/post.controller')
 
 const app = express.Router();
 
@@ -48,5 +48,26 @@ app.post("/login", login);
 //delete
 
 app.delete("/telivision/:id", televisionDelete)
+
+app.delete("/watch/:id", watchDelete)
+
+app.delete("/appliance/:id", applianceDelete)
+
+app.delete("/soundbar/:id", soundbarDelete)
+
+app.delete("/laptop/:id", laptopDelete)
+
+//patch
+
+app.patch("/telivision/:_id", televisionPatch)
+
+app.patch("/laptop/:_id", laptopPatch)
+
+app.patch("/appliance/:_id", appliancePatch)
+
+app.patch("/watch/:_id", watchPatch)
+
+app.patch("/soundbar/:_id", soundbarPatch)
+
 
 module.exports = app
