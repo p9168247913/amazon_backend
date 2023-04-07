@@ -31,7 +31,7 @@ app.use("/cart" ,cartRouter)
 app.use('/order', orderRouter)
 
 
-app.listen(process.env.port, async () => {
+app.listen(4500, async () => {
   try {
     await connection;
     console.log("Connected to Mongo Atlas");
@@ -39,5 +39,5 @@ app.listen(process.env.port, async () => {
     console.log(err)
     console.log("Couldn't connect to Mongo Atlas");
   }
-  console.log(`Server started on port ${process.env.port}`);
+  console.log("Server started on port 4500");
 });
