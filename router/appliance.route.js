@@ -37,7 +37,7 @@ applianceRouter.get("/", async (req, res) => {
 applianceRouter.get("/:id", async(req,res)=>{
     const id = req.params.id
     try {
-        const data = await telivisionModel.find({_id:id})
+        const data = await applianceModel.find({_id:id})
         res.send(data);
     } catch (e) {
         res.send(e)

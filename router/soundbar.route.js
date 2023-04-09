@@ -36,7 +36,7 @@ soundRouter.get("/", async (req, res) => {
 soundRouter.get("/:id", async(req,res)=>{
     const id = req.params.id
     try {
-        const data = await telivisionModel.find({_id:id})
+        const data = await soundbarModel.find({_id:id})
         res.send(data);
     } catch (e) {
         res.send(e)

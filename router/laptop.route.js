@@ -37,7 +37,7 @@ laptopRouter.get("/", async (req, res) => {
 laptopRouter.get("/:id", async(req,res)=>{
     const id = req.params.id
     try {
-        const data = await telivisionModel.find({_id:id})
+        const data = await laptopModel.find({_id:id})
         res.send(data);
     } catch (e) {
         res.send(e)

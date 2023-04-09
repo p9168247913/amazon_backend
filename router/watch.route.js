@@ -35,7 +35,7 @@ watchRouter.get("/", async (req, res) => {
 watchRouter.get("/:id", async(req,res)=>{
     const id = req.params.id
     try {
-        const data = await telivisionModel.find({_id:id})
+        const data = await watchModel.find({_id:id})
         res.send(data);
     } catch (e) {
         res.send(e)
